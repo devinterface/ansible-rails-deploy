@@ -1,0 +1,3 @@
+- name: Installing common ruby gems
+  shell: '/home/{{ deploy_user }}/.rbenv/shims/gem install {{ item }}'
+  with_items: preinstall_gems

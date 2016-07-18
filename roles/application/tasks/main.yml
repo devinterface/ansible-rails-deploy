@@ -1,0 +1,33 @@
+- name: Create web application directories
+  file:
+      path: "{{deploy_dir}}/{{item}}"
+      state: directory
+      recurse: yes
+      owner: "{{deploy_user}}"
+      group: "{{deploy_user}}"
+  with_items:
+      - "shared/config"
+      - "shared/log"
+      - "shared/public"
+      - "shared/data"
+  sudo: yes
+  tags:
+    - webapp
+
+- name: Add database config
+  template: src=database.yml.j2 dest={{deploy_dir}}/shared/config/database.yml
+  sudo: yes
+  tags:
+    - webapp
+
+- name: Add secret config
+  template: src=secrets.yml.j2 dest={{deploy_dir}}/shared/config/secrets.yml
+  sudo: yes
+  tags:
+    - webapp
+
+- name: Add settings config
+  template: src=settings.local.yml.j2 dest={{deploy_dir}}/shared/config/settings.local.yml
+  sudo: yes
+  tags:
+    - webapp

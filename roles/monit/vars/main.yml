@@ -1,0 +1,5 @@
+#Monit info
+monit_check_interval: 60
+monit_web_user: admin
+monit_web_user_pass: yourmonitpassword
+postgresql_version: 9.4

@@ -1,0 +1,21 @@
+---
+- hosts: appservers
+  sudo: true
+  vars_files:
+    - vars/all.yml
+  roles:
+    - swapfile
+    - security
+    - capistrano
+    - rbenv
+    - ruby-multi
+    - preinstall-gems
+    - nodejs
+    - nginx-passenger
+    - postgres
+    #- mysql
+    - redis
+    - crons
+    - application
+    - logrotate
+    - monit

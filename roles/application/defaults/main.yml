@@ -1,0 +1,32 @@
+# newrelic:
+newrelic_license_key: ''
+
+# rollbar
+rollbar_enabled: true
+rollbar_server_key: ''
+rollbar_client_key: ''
+
+# mandrill
+mandrill_username: ''
+mandrill_api_key: ''
+
+# application
+app_name: app
+
+app_secret_key_base: "<%= ENV['SECRET_KEY_BASE']||SecureRandom.hex(64) %>"
+app_secret_token: "<%= ENV['SECRET_TOKEN']||SecureRandom.hex(64) %>"
+admin_name: <%= ENV["ADMIN_NAME"] ||= 'DevInterface' %>
+admin_email: <%= ENV["ADMIN_EMAIL"] ||= 'info@devinterface.com' %>
+admin_password: <%= ENV["ADMIN_PASSWORD"] ||= 'password' %>
+email_provider_username: <%= ENV["SENDGRID_USERNAME"] %>
+email_provider_apikey: <%= ENV["SENDGRID_APIKEY"] %>
+domain_name: <%= ENV["DOMAIN_NAME"] ||= '' %>
+
+app_redis_url: "<%= ENV['REDIS_ADDR'].nil? ? \"redis://localhost:6379\" : \"redis://#{ENV['REDIS_ADDR']}:#{ENV['REDIS_PORT']}\" %>"
+app_mailer_default_from: "<%= ENV['EMAIL_FROM']||'info@devinterface.com' %>"
+app_mailer_default_to: "<%= ENV['EMAIL_FROM']||'info@devinterface.com' %>"
+
+# amazon
+aws_access_key_id: "<%= ENV['AWS_ACCESS_KEY'] %>"
+aws_secret_access_key: "<%= ENV['AWS_SECRET_ACCESS_KEY'] %>"
+aws_dir: "<%= ENV['AWS_DIR'] %>"

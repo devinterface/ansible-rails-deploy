@@ -1,0 +1,23 @@
+redis_url: {{app_redis_url}}
+
+app:
+  host: {{deploy_hostname}}
+
+mailer:
+  default_from: {{app_mailer_default_from}}
+  default_to: {{app_mailer_default_to}}
+
+newrelic_key: '{{ newrelic_license_key }}'
+
+rollbar:
+  enabled: {{ rollbar_enabled }}
+  server_key: '{{ rollbar_server_key }}'
+  client_key: '{{ rollbar_client_key }}'
+
+mandrill:
+  username: '{{ mandrill_username }}'
+  api_key: '{{ mandrill_api_key }}'
+
+aws_access_key_id: '{{ aws_access_key_id }}'
+aws_secret_access_key: '{{ aws_secret_access_key }}'
+aws_dir: {{ aws_dir }}

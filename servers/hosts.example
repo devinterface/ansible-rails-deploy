@@ -1,0 +1,5 @@
+[bootstrap]
+my.server.ip.address ansible_ssh_user=root
+
+[appservers]
+my.server.ip.address ansible_ssh_user=deploy
