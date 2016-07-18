@@ -9,6 +9,8 @@ Ansible provisioning to setup a pre-configured Ruby/Rails server that contains t
 - Setup some cron jobs to run rake tasks
 - Sets up ufw and fail2ban for basic security
 - Sets up swapon for when you run out of memory
+- Sets up logrotate for rails app
+- Sets up monit
 - Checkout the [changelog](CHANGELOG.md) for recent additions
 
 ## Prerequisites
